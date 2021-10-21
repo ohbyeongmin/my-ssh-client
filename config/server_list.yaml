@@ -1,0 +1,11 @@
+preRun:
+    path: "/Users/byeongminoh/my-key/kakao-i-cloud/route"
+list:
+    - name: "obm-master-01"
+      ip: "172.30.5.99"
+      port: 22
+      key: "/Users/byeongminoh/my-key/kakao-i-cloud/ohbyeongmin.cer"
+    - name: "obm-master-02"
+      ip: "172.30.7.210"
+      port: 22
+      key: "/Users/byeongminoh/my-key/kakao-i-cloud/ohbyeongmin.cer"
