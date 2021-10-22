@@ -7,13 +7,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var serverListFile string
-
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Print Server list",
 	Run: func(cmd *cobra.Command, args []string) {
-		list := config.GetServerList(serverListFile)
+		if MySSHFile == "" {
+			fmt.Println("Please input your server info file")
+			return
+		}
+		config.SetFileConfig(MySSHFile)
+		list := config.GetServerList()
 		for i, v := range list {
 			fmt.Printf("%d : %s\n", i+1, v)
 		}
@@ -21,6 +24,6 @@ var listCmd = &cobra.Command{
 }
 
 func init() {
-	listCmd.Flags().StringVarP(&serverListFile, "file", "f", "./config/server_list.yaml", "Input your server list file")
+	listCmd.Flags().StringVarP(&MySSHFile, "file", "f", "", "Input your server list file")
 	rootCmd.AddCommand(listCmd)
 }

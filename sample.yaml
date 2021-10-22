@@ -1,0 +1,13 @@
+preRun:
+    path: "path/file"
+list:
+    - name: "sample-01"
+      account: "centos"
+      ip: "192.168.0.2"
+      port: 22
+      key: "sampe.pem"
+    - name: "sample-02"
+      account: "centos"
+      ip: "192.168.0.3"
+      port: 22
+      key: "sampe.pem"
